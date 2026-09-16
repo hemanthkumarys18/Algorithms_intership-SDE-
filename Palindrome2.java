@@ -2,38 +2,36 @@ package Day_17;
 
 import java.util.*;
 
-class Palindrome 
+class Palindrome2 
 {
 
-    static boolean check(int n) 
+    boolean check(int n) 
     {
 
-        int num = n;
+        int original = n;
         int reverse = 0;
 
-        while (n != 0) 
-        {
-
+        while (n != 0) {
             int digit = n % 10;
             reverse = reverse * 10 + digit;
             n = n / 10;
         }
 
-        return num == reverse;
+        return original == reverse;
     }
 
     public static void main(String[] args) 
     {
-
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Enter number: ");
-
         int n = sc.nextInt();
 
-        if (check(n))
-            System.out.println("Palindrome");
+        Palindrome obj = new Palindrome();
+
+        if (obj.check(n))
+            System.out.println("Palindrome" +n);
         else
-            System.out.println("Not Palindrome");
+            System.out.println("Not Palindrome" +n);
     }
 }
